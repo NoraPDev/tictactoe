@@ -8,9 +8,6 @@ h1 {
     color: rgb(202, 44, 44);
 }
 
-#cells, #text-box {
-    display: flex;
-}
 
 #text-content {
     border: dotted darkblue;
