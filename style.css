@@ -1,4 +1,20 @@
+body {
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(58, 116, 183);
+}
 
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(202, 44, 44);
+}
+
+#cells, #text-box {
+    display: flex;
+}
+
+#text-content {
+    border: dotted darkblue;
+}
 
 #a1, #a2, #b1, #b2, #c1, #c2, #c3 {
     height: 2em;
