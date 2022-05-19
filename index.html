@@ -21,8 +21,8 @@
         <br>
         
         <div id="cells">
-            <div onclick="gameInput(a1)">
-            <input type="text" id="a1" class="cell" disabled>
+            <div onclick="gameInput(a1)" class="cell-div">
+                <input type="text" id="a1" class="cell" disabled>
             </div>
             <div onclick="gameInput(a2)">
                 <input type="text" onclick="" id="a2" class="cell" disabled>
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div id="text-box">
-            <input type="text" value="Next turn is Player 1" id="text-content">
+            <span id="text-content"></span>
         </div>
         <br><br>
         <input type="button" id="start" onclick="startGame()" value="START GAME">
