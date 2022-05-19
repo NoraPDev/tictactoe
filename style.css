@@ -13,15 +13,27 @@ h1 {
     border: dotted darkblue;
 }
 
+.cell {
+
+}
+
 #a1, #a2, #b1, #b2, #c1, #c2, #c3 {
-    height: 2em;
-    width: 2em;
+    height: 8em;
+    width: 8em;
     margin:auto;
     float: left;
 }
 
 #a3, #b3 {
-    height: 2em;
-    width: 2em;
+    height: 8em;
+    width: 8em;
     margin:auto;
+}
+
+#cells {
+    background-color: red;
+    width: 30em;
+    height: 30em;
+    display: flex;
+    flex-wrap: wrap;
 }
