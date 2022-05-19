@@ -52,7 +52,15 @@ function checkCells() {
         (a2.value==b2.value && b2.value==c2.value && a2.value != "") ||
         (a3.value==b3.value && b3.value==c3.value && a3.value != "")
         ) {
-    alert("You Won!")
+    Swal.fire({
+        title: `${actualPlayer} won!`,
+        showClass: {
+            popup: 'animate_animated animate_fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate_animated animate_fadeOutUp'
+        }
+    })
     }
 
 }
