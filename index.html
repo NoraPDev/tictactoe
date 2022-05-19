@@ -7,55 +7,74 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <h1>TIC-TAC-TOE</h1>
-    <div id="game-table">
-        <label for="name">Player 1</label>
-        <input type="text" id="player-one">
-        <br>
-        <label for="name">Player 2</label>
-        <input type="text" id="player-two">
-        <br>
-        
-        <div id="cells">
-            <div onclick="gameInput(a1)" class="cell-div">
-                <input type="text" id="a1" class="cell" disabled>
-            </div>
-            <div onclick="gameInput(a2)">
-                <input type="text" onclick="" id="a2" class="cell" disabled>
-            </div>
-            <div onclick="gameInput(a3)">
-                <input type="text" onclick="" id="a3" class="cell" disabled>
-            </div>
-            <div onclick="gameInput(b1)">
-                <input type="text" onclick="" id="b1" class="cell" disabled>
-            </div>
-            <div onclick="gameInput(b2)">
-                <input type="text" onclick="" id="b2" class="cell" disabled>
-            </div>
-            <div onclick="gameInput(b3)">
-                <input type="text" onclick="" id="b3" class="cell" disabled>
-            </div>
-            <div onclick="gameInput(c1)">
-                <input type="text" onclick="" id="c1" class="cell" disabled>
-            </div>
-            <div onclick="gameInput(c2)">
-                <input type="text" onclick="" id="c2" class="cell" disabled>
-            </div>
-            <div onclick="gameInput(c3)">
-                <input type="text" onclick="" id="c3" class="cell" disabled>
-            </div>
+    <div class="container" id="welcome-area">
+        <div class="row mt-4">
+            <span id="welcome-text">GREETINGS! 
+            <br> SHALL WE PLAY A GAME?
+            <br> A STRANGE GAME. <br> 
+            THE ONLY WINNING MOVE IS NOT TO PLAY.</span>
+            <br>
+            <button id="change">Click Me</button>
         </div>
-        <div id="text-box">
-            <span id="text-content"></span>
-        </div>
-        <br><br>
-        <input type="button" id="start" onclick="startGame()" value="START GAME">
-        <input type="button" id="reset" onclick="resetCells()" value="RESET GAME">
     </div>
+    
+
+    <div class="container hide" id="game-area">
+        <div class="row mt-4">
+            <div class="col-12">
+                <h1 class="text-center">TIC-TAC-TOE</h1>
+                <div id="game-table">
+                    <label for="name">Player 1</label>
+                    <input type="text" id="player-one">
+                    <br>
+                    <label for="name">Player 2</label>
+                    <input type="text" id="player-two">
+                    <br>
+                    
+                    <div id="cells">
+                        <div onclick="gameInput(a1)" class="cell-div">
+                            <input type="text" id="a1" class="cell" disabled>
+                        </div>
+                        <div onclick="gameInput(a2)">
+                            <input type="text" onclick="" id="a2" class="cell" disabled>
+                        </div>
+                        <div onclick="gameInput(a3)">
+                            <input type="text" onclick="" id="a3" class="cell" disabled>
+                        </div>
+                        <div onclick="gameInput(b1)">
+                            <input type="text" onclick="" id="b1" class="cell" disabled>
+                        </div>
+                        <div onclick="gameInput(b2)">
+                            <input type="text" onclick="" id="b2" class="cell" disabled>
+                        </div>
+                        <div onclick="gameInput(b3)">
+                            <input type="text" onclick="" id="b3" class="cell" disabled>
+                        </div>
+                        <div onclick="gameInput(c1)">
+                            <input type="text" onclick="" id="c1" class="cell" disabled>
+                        </div>
+                        <div onclick="gameInput(c2)">
+                            <input type="text" onclick="" id="c2" class="cell" disabled>
+                        </div>
+                        <div onclick="gameInput(c3)">
+                            <input type="text" onclick="" id="c3" class="cell" disabled>
+                        </div>
+                    </div>
+                    <div id="text-box">
+                        <span id="text-content"></span>
+                    </div>
+                    <br><br>
+                    <input type="button" id="start" onclick="startGame()" value="START GAME">
+                    <input type="button" id="reset" onclick="resetCells()" value="RESET GAME">
+            
+                </div>
+            </div>
+        </div>
+    </div>    
     <script src="script.js"></script>
 </body>
 </html>
