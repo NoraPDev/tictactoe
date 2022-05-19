@@ -1,4 +1,9 @@
-body {
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+  }
+  
+  body {
     font-family: 'VT323', monospace;
     color: rgb(58, 116, 183);
     background-color: black;
@@ -7,7 +12,8 @@ body {
 #welcome-area {
     text-align: center;
     position: fixed; /* or absolute */
-  
+    top: 30%;
+    left: 17%;
     font-size: 4em;
 }
 
@@ -27,7 +33,21 @@ body {
 @keyframes blink {
     from { border-color: transparent }
     to { border-color: orange; }
-  }
+}
+
+.neon-button {
+    font-size: 1em;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--clr-neon);
+}
+
+.neon-game-button {
+    font-size: 3em;
+    color: var(--clr-neon);
+    display: inline-block;
+    cursor: pointer;
+}
 
 h1 {
     font-family: 'VT323', monospace;
