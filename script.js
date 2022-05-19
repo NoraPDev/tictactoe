@@ -11,6 +11,16 @@ let playerOne = document.getElementById("player-one");
 let playerTwo = document.getElementById("player-two");
 var actualPlayer = "X";
 
+const change = document.getElementById("change")
+const gameArea = document.getElementById("game-area")
+const welcomeArea = document.getElementById("welcome-area")
+
+change.addEventListener('click', () => {
+    console.log('hello')
+    gameArea.classList.remove("hide")
+    welcomeArea.classList.add("hide")
+})
+
 function resetCells() {
     a1.value = "";
     a2.value = "";
