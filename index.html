@@ -34,7 +34,6 @@
                     <label for="name">Player O</label>
                     <input type="text" id="player-o">
                     <br>
-                    
                     <div id="cells">
                         <div onclick="gameInput(a1)" class="cell-div">
                             <input type="text" id="a1" class="cell" disabled>
@@ -68,9 +67,9 @@
                         <span id="text-content">Player X = 0 <br>Player O = 0</span>
                     </div>
                     <br><br>
-                    <a href="#" class="neon-game-button" id="restart" onclick="restartGame()" style="padding-right: 5%">START GAME</a>
-                    <a href="#" class="neon-game-button" id="restart" onclick="restartGame()" style="padding-right: 5%">RESTART GAME</a>
-                    <a href="#" class="neon-game-button" id="reset" onclick="resetCells()">RESET GAME</a>
+                    <a href="#" class="neon-game-button" id="start" onclick="startGame()" style="padding-right: 5%">START GAME</a>
+                    <a href="#" class="neon-game-button hide" id="restart" onclick="restartGame()" style="padding-right: 5%">RESTART GAME</a>
+                    <a href="#" class="neon-game-button hide" id="reset" onclick="resetGame()">RESET GAME</a>
             
                 </div>
             </div>
