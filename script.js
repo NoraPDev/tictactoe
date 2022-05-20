@@ -1,3 +1,4 @@
+// 
 let a1 = document.getElementById("a1");
 let a2 = document.getElementById("a2");
 let a3 = document.getElementById("a3");
@@ -44,6 +45,9 @@ function startGame() {
     resetCells();
     document.getElementById("restart").classList.remove("hide");
     document.getElementById("reset").classList.remove("hide");
+    document.getElementById("start").classList.add("hide");
+    document.getElementById("cells").classList.remove("hide")
+
 }
 
 function restartGame() {
@@ -66,10 +70,11 @@ function resetGame() {
             playerX.value = "";
             playerO.disabled = false;
             playerO.value = "";
-            Swal.fire(
-                'Reset!',
-                'Your game has been deleted.',
-                'success')
+            scores = { X: 0, O: 0 }
+            document.getElementById("text-content").innerHTML = "Player X = " + scores.X + " <br>Player O = " + scores.O;
+            document.getElementById("start").classList.remove("hide");
+            document.getElementById("restart").classList.add("hide");
+            document.getElementById("reset").classList.add("hide");
         }
       })
 }
@@ -99,12 +104,13 @@ function checkCells() {
                 })
                 scores[actualPlayer] ++;
                 document.getElementById("text-content").innerHTML = "Player X = " + scores.X + " <br>Player O = " + scores.O;
+                resetCells();
     }
 }
 
 
 function gameInput(object) {
-    if (object.value == ""){
+    if (object.value == "" && document.getElementById("start").classList.contains("hide") == true){
         object.value = actualPlayer;    // Add X or O to the board
         checkCells();                   // Check if there is a winner
         // Identify next player
