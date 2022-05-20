@@ -7,9 +7,11 @@ let b3 = document.getElementById("b3");
 let c1 = document.getElementById("c1");
 let c2 = document.getElementById("c2");
 let c3 = document.getElementById("c3");
-let playerOne = document.getElementById("player-one");
-let playerTwo = document.getElementById("player-two");
+let playerX = document.getElementById("player-x");
+let playerO = document.getElementById("player-o");
 var actualPlayer = "X";
+var playerXScore = 0;
+var playerOScore = 0;
 
 const change = document.getElementById("change")
 const gameArea = document.getElementById("game-area")
@@ -39,7 +41,7 @@ function startGame() {
 }
 
 function checkCells() {
-    // rows, cols
+    // rows, diagonals, cols
     if(
         (a1.value==a2.value && a2.value==a3.value && a1.value != "") ||
         (b1.value==b2.value && b2.value==b3.value && b1.value != "") ||
@@ -61,19 +63,22 @@ function checkCells() {
             popup: 'animate_animated animate_fadeOutUp'
         }
     })
+    document.getElementById("text-content").innerHTML = "Hello World!";
     }
+    
 
 }
 
 
 function gameInput(object) {
     if (object.value == ""){
-        object.value = actualPlayer;
+        object.value = actualPlayer;    // Add X or O to the board
+        checkCells();
         if (actualPlayer == "X") {
             actualPlayer = "O";
         } else {
             actualPlayer = "X";
         } 
-        checkCells();
     } 
 }
+
