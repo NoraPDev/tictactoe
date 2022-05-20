@@ -1,6 +1,4 @@
-
-  
-  body {
+body {
     font-family: 'VT323', monospace;
     color: rgb(58, 116, 183);
     background-color: black;
@@ -72,7 +70,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     border-spacing: 0px;
-    border-collapse: separate;
+   
     margin: 30px auto;
 }
 
