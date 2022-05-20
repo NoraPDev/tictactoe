@@ -10,9 +10,12 @@ let c3 = document.getElementById("c3");
 let playerX = document.getElementById("player-x");
 let playerO = document.getElementById("player-o");
 var actualPlayer = "X";
-var playerXScore = 0;
-var playerOScore = 0;
+var scores = {
+    X: 0,
+    O: 0
+}
 
+// Change welcome screen to game screen
 const change = document.getElementById("change")
 const gameArea = document.getElementById("game-area")
 const welcomeArea = document.getElementById("welcome-area")
@@ -36,8 +39,39 @@ function resetCells() {
 }
 
 function startGame() {
+    playerX.disabled = true;
+    playerO.disabled = true;
     resetCells();
+    document.getElementById("restart").classList.remove("hide");
+    document.getElementById("reset").classList.remove("hide");
+}
 
+function restartGame() {
+    resetCells();
+}
+
+function resetGame() {
+    Swal.fire({
+        title: 'Are you sure you want to reset the game?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, reset my game!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            resetCells();
+            playerX.disabled = false; 
+            playerX.value = "";
+            playerO.disabled = false;
+            playerO.value = "";
+            Swal.fire(
+                'Reset!',
+                'Your game has been deleted.',
+                'success')
+        }
+      })
 }
 
 function checkCells() {
@@ -54,26 +88,26 @@ function checkCells() {
         (a2.value==b2.value && b2.value==c2.value && a2.value != "") ||
         (a3.value==b3.value && b3.value==c3.value && a3.value != "")
         ) {
-    Swal.fire({
-        title: `${actualPlayer} won!`,
-        showClass: {
-            popup: 'animate_animated animate_fadeInDown'
-        },
-        hideClass: {
-            popup: 'animate_animated animate_fadeOutUp'
-        }
-    })
-    document.getElementById("text-content").innerHTML = "Hello World!";
+                Swal.fire({
+                    title: `${actualPlayer} won!`,
+                    showClass: {
+                        popup: 'animate_animated animate_fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate_animated animate_fadeOutUp'
+                    }
+                })
+                scores[actualPlayer] ++;
+                document.getElementById("text-content").innerHTML = "Player X = " + scores.X + " <br>Player O = " + scores.O;
     }
-    
-
 }
 
 
 function gameInput(object) {
     if (object.value == ""){
         object.value = actualPlayer;    // Add X or O to the board
-        checkCells();
+        checkCells();                   // Check if there is a winner
+        // Identify next player
         if (actualPlayer == "X") {
             actualPlayer = "O";
         } else {
