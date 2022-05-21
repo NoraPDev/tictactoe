@@ -57,12 +57,12 @@ function restartGame() {
 function resetGame() {
     Swal.fire({
         title: 'Are you sure you want to reset the game?',
-        text: "You won't be able to revert this!",
+        text: "You will lose your scores and games and won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, reset my game!'
+        confirmButtonText: 'Yes, reset the whole game!'
       }).then((result) => {
         if (result.isConfirmed) {
             resetCells();
