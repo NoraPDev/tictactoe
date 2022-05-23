@@ -27,6 +27,10 @@ change.addEventListener('click', () => {
     welcomeArea.classList.add("hide")
 })
 
+function inputPlayerNames() {
+    document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + "<br>" + playerO.value + "=" + scores.O;
+}
+
 function resetCells() {
     a1.value = "";
     a2.value = "";
@@ -43,6 +47,7 @@ function startGame() {
     playerX.disabled = true;
     playerO.disabled = true;
     resetCells();
+    document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
     document.getElementById("restart").classList.remove("hide");
     document.getElementById("reset").classList.remove("hide");
     document.getElementById("start").classList.add("hide");
@@ -71,7 +76,7 @@ function resetGame() {
             playerO.disabled = false;
             playerO.value = "";
             scores = { X: 0, O: 0 }
-            document.getElementById("text-content").innerHTML = "Player X = " + scores.X + " <br>Player O = " + scores.O;
+            document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
             document.getElementById("start").classList.remove("hide");
             document.getElementById("restart").classList.add("hide");
             document.getElementById("reset").classList.add("hide");
@@ -79,8 +84,8 @@ function resetGame() {
       })
 }
 
-function checkCells() {
-    // rows, diagonals, cols
+// check if there are three X's or O's horizontally, vertically or diagonally
+function cellMatches() {
     if(
         (a1.value==a2.value && a2.value==a3.value && a1.value != "") ||
         (b1.value==b2.value && b2.value==b3.value && b1.value != "") ||
@@ -92,7 +97,12 @@ function checkCells() {
         (a1.value==b1.value && b1.value==c1.value && a1.value != "") ||
         (a2.value==b2.value && b2.value==c2.value && a2.value != "") ||
         (a3.value==b3.value && b3.value==c3.value && a3.value != "")
-        ) {
+    ) {result = true;} else {result = false;}
+} 
+
+function checkCells() {
+    // rows, diagonals, cols
+    if(cellMatches()) {
                 Swal.fire({
                     title: `${actualPlayer} won!`,
                     showClass: {
@@ -103,8 +113,7 @@ function checkCells() {
                     }
                 })
                 scores[actualPlayer] ++;
-                document.getElementById("text-content").innerHTML = "Player X = " + scores.X + " <br>Player O = " + scores.O;
-                resetCells();
+                document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
     }
 }
 
