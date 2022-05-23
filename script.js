@@ -15,6 +15,7 @@ var scores = {
     X: 0,
     O: 0
 }
+let board = [a1, a2, a3, b1, b2, b3, c1, c2. c3];
 
 // Change welcome screen to game screen
 const change = document.getElementById("change")
@@ -131,3 +132,6 @@ function gameInput(object) {
     } 
 }
 
+// create random number to play with computer
+var randomNumber = Math.floor(Math.random() * 8);
+alert(randomNumber);
