@@ -25,6 +25,105 @@ body {
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
 }
 
+.nd{
+	background-color:#16dfee;
+	width:47vw;
+	height:47vw;
+	position:relative;
+}
+
+.a1{
+	position:absolute;
+	background-color:black;
+	left: 0vw;
+	top: 0vw;
+	width:15vw;
+	height:15vw;
+}
+
+.a2{
+	position:absolute;
+	background-color:black;
+	left: 16vw;
+	top: 0vw;
+	width:15vw;
+	height:15vw;
+}
+
+.a3{
+	position:absolute;
+	background-color:black;
+	right: 0vw;
+	top: 0vw;
+	width:15vw;
+	height:15vw;
+}
+
+.b1{
+	position:absolute;
+	background-color:black;
+	left: 0vw;
+	top: 16vw;
+	width:15vw;
+	height:15vw;
+}
+
+.b2{
+	position:absolute;
+	background-color:black;
+	left: 16vw;
+	top: 16vw;
+	width:15vw;
+	height:15vw;
+}
+
+.b3{
+	position:absolute;
+	background-color:black;
+	right: 0vw;
+	top: 16vw;
+	width:15vw;
+	height:15vw;
+}
+
+.c1{
+	position:absolute;
+	background-color:black;
+	left: 0vw;
+	bottom: 0vw;
+	width:15vw;
+	height:15vw;
+}
+
+.c2{
+	position:absolute;
+	background-color:black;
+	left: 16vw;
+	bottom: 0vw;
+	width:15vw;
+	height:15vw;
+}
+
+.c3{
+	position:absolute;
+	background-color:black;
+	right: 0vw;
+	bottom: 0vw;
+	width:15vw;
+	height:15vw;
+}
+
+.inp{
+	width: 14vw;
+	height: 14vw;
+	color: orange;
+	font-size: 15vw;
+	background-color: red;
+	border: none;
+	outline: none;
+	text-align: center;
+}
+
 @keyframes typing {
   from {
     width: 3em
@@ -51,72 +150,13 @@ body {
  
 }
 
-
 h1 {
     font-family: 'VT323', monospace;
     color: #FF9933;
     font-size: 3.5em;
 }
 
-
-
-
-
 .hide {
     display: none;
 }
 
-#cells {
-    background-color: black;
-    width: 25em;
-    height: 25em;
-    display: flex;
-    flex-wrap: wrap;
-    border-spacing: 0px;
-   
-    margin: 30px auto;
-}
-
-#cells >div {
-    width: 33%;
-    height: 33%;
-    display: block;}
-
-.cell {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-size: 5em;
-    border: 10px solid #6ccbf6; 
-    ;
-}
-
-#a1 {
-    border-top: none;
-    border-left: none;
-} 
-#a2 {
-    border-top: none;
-
-} 
-#a3 {
-    border-top: none;
-    border-right: none;
-}
-#b1 {
-    border-left: none;
-}
-#c1 {
-    border-left: none;
-    border-bottom: none;
-}
-#c2 {
-    border-bottom: none;
-}
-#c3 {
-    border-bottom: none;
-    border-right: none;
-}
-#b3 {
-    border-right: none;
-}
