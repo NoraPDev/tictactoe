@@ -18,7 +18,7 @@
             <br> A STRANGE GAME. <br> 
             THE ONLY WINNING MOVE IS NOT TO PLAY.</span>
             <br><br>
-            <a href="#" class="neon-button" id="change" onclick= "randomR()">Click Me</a>
+            <a href="#" class="neon-button" id="change">Click Me</a>
         </div>
     </div>
     
@@ -31,8 +31,15 @@
                     <label for="name">Player X</label>
                     <input type="text" id="player-x">
                     <br>
+                    <input type="radio" id="human" name="opponent" value="human" onclick="chooseOpponent()">
+                    <label for="html">Against Human</label>
+                    <input type="radio" id="ai" name="opponent" value="ai" onclick="chooseOpponent()">
+                    <label for="css">Against Computer</label>
+                    <br>
                     <label for="name">Player O</label>
                     <input type="text" id="player-o">
+                    <br>
+                   
                     <br>
                     <div id="cells">
                         <div onclick="gameInput(a1)" class="cell-div">
