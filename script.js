@@ -25,9 +25,8 @@ const gameArea = document.getElementById("game-area")
 const welcomeArea = document.getElementById("welcome-area")
 
 change.addEventListener('click', () => {
-    console.log('hello')
-    gameArea.classList.remove("hide")
-    welcomeArea.classList.add("hide")
+    gameArea.classList.remove("hide");
+    welcomeArea.classList.add("hide");
 })
 
 function chooseOpponent() {
@@ -44,7 +43,6 @@ function inputPlayerNames() {
     document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + "<br>" + playerO.value + "=" + scores.O;
 }
 
-
 function resetCells() {
     a1.value = "";
     a2.value = "";
@@ -60,6 +58,9 @@ function resetCells() {
 }
 
 function startGame() {
+    if (playerX.value == "" || playerO.value == "") {
+        popUp(`Type in players' names, please!`)
+    } else {
     playerX.disabled = true;
     playerO.disabled = true;
     document.getElementById("ai").disabled = true;
@@ -69,8 +70,7 @@ function startGame() {
     document.getElementById("restart").classList.remove("hide");
     document.getElementById("reset").classList.remove("hide");
     document.getElementById("start").classList.add("hide");
-    document.getElementById("cells").classList.remove("hide")
-
+    }
 }
 
 function restartGame() {
