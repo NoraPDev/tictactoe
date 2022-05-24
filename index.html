@@ -25,7 +25,7 @@
 
     <div class="container hide" id="game-area">
                 <h1 class="text-center">TIC-TAC-TOE</h1>
-                <div id="game-table">
+                <div id="playerNames">
                     <label for="name">Player X</label>
                     <input type="text" id="player-x" placeholder="Name">
                     <br>
@@ -36,7 +36,7 @@
                     <br>
                     <label for="name">Player O</label>
                     <input type="text" id="player-o" placeholder="Name" value="Computer" disabled>
-                    <br>
+                </div>
                     <div class='nd'>
                         <div class='a1' onClick="gameInput(a1)"><input type='text' id='a1' class='inp' disabled></div>
                         <div class='a2' onClick="gameInput(a2)"><input type='text' id='a2' class='inp' disabled></div>
@@ -49,15 +49,14 @@
                         <div class='c3' onClick="gameInput(c3)"><input type='text' id='c3' class='inp' disabled></div>
                     </div>
                                     
-                    <br>
-                    <div id="text-box">
+                    <div id="score-box">
                         <span id="text-content"></span>
                     </div>
-                    <br><br>
+                    <div id="buttons-box">
                     <a href="#" class="neon-game-button" id="start" onclick="startGame()" style="padding-right: 5%">START A NEW GAME</a>
                     <a href="#" class="neon-game-button hide" id="restart" onclick="restartGame()" style="padding-right: 5%">RESTART THIS GAME</a>
                     <a href="#" class="neon-game-button hide" id="reset" onclick="resetGame()">RESET THE WHOLE GAME</a>
-                </div>
+                    </div>
     </div>    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
