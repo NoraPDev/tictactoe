@@ -24,52 +24,32 @@
     
 
     <div class="container hide" id="game-area">
-        <div class="row mt-4">
-            <div class="col-12">
                 <h1 class="text-center">TIC-TAC-TOE</h1>
                 <div id="game-table">
                     <label for="name">Player X</label>
-                    <input type="text" id="player-x">
+                    <input type="text" id="player-x" placeholder="Name">
                     <br>
                     <input type="radio" id="human" name="opponent" value="human" onclick="chooseOpponent()">
                     <label for="html">Against Human</label>
-                    <input type="radio" id="ai" name="opponent" value="ai" onclick="chooseOpponent()">
+                    <input type="radio" id="ai" name="opponent" value="ai" onclick="chooseOpponent()" checked>
                     <label for="css">Against Computer</label>
                     <br>
                     <label for="name">Player O</label>
-                    <input type="text" id="player-o">
+                    <input type="text" id="player-o" placeholder="Name" value="Computer" disabled>
                     <br>
-                   
-                    <br>
-                    <div id="cells">
-                        <div onclick="gameInput(a1)" class="cell-div">
-                            <input type="text" id="a1" class="cell" disabled>
-                        </div>
-                        <div onclick="gameInput(a2)">
-                            <input type="text" onclick="" id="a2" class="cell" disabled>
-                        </div>
-                        <div onclick="gameInput(a3)">
-                            <input type="text" onclick="" id="a3" class="cell" disabled>
-                        </div>
-                        <div onclick="gameInput(b1)">
-                            <input type="text" onclick="" id="b1" class="cell" disabled>
-                        </div>
-                        <div onclick="gameInput(b2)">
-                            <input type="text" onclick="" id="b2" class="cell" disabled>
-                        </div>
-                        <div onclick="gameInput(b3)">
-                            <input type="text" onclick="" id="b3" class="cell" disabled>
-                        </div>
-                        <div onclick="gameInput(c1)">
-                            <input type="text" onclick="" id="c1" class="cell" disabled>
-                        </div>
-                        <div onclick="gameInput(c2)">
-                            <input type="text" onclick="" id="c2" class="cell" disabled>
-                        </div>
-                        <div onclick="gameInput(c3)">
-                            <input type="text" onclick="" id="c3" class="cell" disabled>
-                        </div>
+                    <div class='nd'>
+                        <div class='a1' onClick="gameInput(a1)"><input type='text' id='a1' class='inp' disabled></div>
+                        <div class='a2' onClick="gameInput(a2)"><input type='text' id='a2' class='inp' disabled></div>
+                        <div class='a3' onClick="gameInput(a3)"><input type='text' id='a3' class='inp' disabled></div>
+                        <div class='b1' onClick="gameInput(b1)"><input type='text' id='b1' class='inp' disabled></div>
+                        <div class='b2' onClick="gameInput(b2)"><input type='text' id='b2' class='inp' disabled></div>
+                        <div class='b3' onClick="gameInput(b3)"><input type='text' id='b3' class='inp' disabled></div>
+                        <div class='c1' onClick="gameInput(c1)"><input type='text' id='c1' class='inp' disabled></div>
+                        <div class='c2' onClick="gameInput(c2)"><input type='text' id='c2' class='inp' disabled></div>
+                        <div class='c3' onClick="gameInput(c3)"><input type='text' id='c3' class='inp' disabled></div>
                     </div>
+                                    
+                    <br>
                     <div id="text-box">
                         <span id="text-content"></span>
                     </div>
@@ -77,10 +57,7 @@
                     <a href="#" class="neon-game-button" id="start" onclick="startGame()" style="padding-right: 5%">START A NEW GAME</a>
                     <a href="#" class="neon-game-button hide" id="restart" onclick="restartGame()" style="padding-right: 5%">RESTART THIS GAME</a>
                     <a href="#" class="neon-game-button hide" id="reset" onclick="resetGame()">RESET THE WHOLE GAME</a>
-            
                 </div>
-            </div>
-        </div>
     </div>    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
