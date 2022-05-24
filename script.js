@@ -98,7 +98,7 @@ function resetGame() {
             document.getElementById("ai").disabled = false;
             document.getElementById("human").disabled = false;
             scores = { X: 0, O: 0 };
-            document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
+            document.getElementById("text-content").innerHTML = "";
             document.getElementById("start").classList.remove("hide");
             document.getElementById("restart").classList.add("hide");
             document.getElementById("reset").classList.add("hide");
