@@ -124,20 +124,27 @@ function cellMatches() {
     ) {return true;} else {return false;}
 } 
 
+function popUp(message) {
+    Swal.fire({
+        title: (message),
+        showClass: {
+            popup: 'animate_animated animate_fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate_animated animate_fadeOutUp'
+        }
+    })
+}
+
 function checkCells() {
     // rows, diagonals, cols
     if(cellMatches()) {
-                Swal.fire({
-                    title: `${actualPlayer} won!`,
-                    showClass: {
-                        popup: 'animate_animated animate_fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate_animated animate_fadeOutUp'
-                    }
-                })
+                popUp(`${actualPlayer} won!`);
                 scores[actualPlayer] ++;
                 document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
+    } else {
+        if(board.length == 0) {popUp(`It's a draw!`);}
+        
     }
 }
 
