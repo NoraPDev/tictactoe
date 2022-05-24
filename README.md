@@ -9,6 +9,8 @@ Most of the games I have seen online require two players. So there is a Player X
 
 I wanted to try creating a game where one player can play against the computer, as in play against an AI. 
 
+To be added - when play against computer - have different levels, thinking computer
+
 You can view the live site here - <a href="https://norapdev.github.io/tictactoe/" target="_blank" rel="noopener">WarGames Tic-Tac-Toe</a>
 
 ## Table of contents
