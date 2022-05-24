@@ -5,6 +5,7 @@ body {
     margin: 0;
     position: relative;
     width:100%;
+    text-align: center;
 }
 
 #welcome-area {
@@ -114,11 +115,11 @@ body {
 }
 
 .inp{
-	width: 14vw;
-	height: 14vw;
+	width: 14.1vw;
+	height: 14.1vw;
 	color: orange;
 	font-size: 15vw;
-	background-color: red;
+	background-color: black;
 	border: none;
 	outline: none;
 	text-align: center;
