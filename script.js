@@ -15,9 +15,11 @@ var scores = {
     X: 0,
     O: 0
 };
-var R = "R";
 
-let board = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
+
+let boardOriginal = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
+var board = boardOriginal;
+
 
 // Change welcome screen to game screen
 const change = document.getElementById("change")
@@ -30,9 +32,20 @@ change.addEventListener('click', () => {
     welcomeArea.classList.add("hide")
 })
 
+function chooseOpponent() {
+    if (document.getElementById("ai").checked) {
+        playerO.disabled = true;
+        playerO.value = "Computer";
+    } else {
+        playerO.disabled = false;
+        playerO.value = "";
+    }
+}
+
 function inputPlayerNames() {
     document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + "<br>" + playerO.value + "=" + scores.O;
 }
+
 
 function resetCells() {
     a1.value = "";
@@ -44,11 +57,14 @@ function resetCells() {
     c1.value = "";
     c2.value = "";
     c3.value = "";
+    board = boardOriginal;
 }
 
 function startGame() {
     playerX.disabled = true;
     playerO.disabled = true;
+    document.getElementById("ai").disabled = true;
+    document.getElementById("human").disabled = true;
     resetCells();
     document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
     document.getElementById("restart").classList.remove("hide");
@@ -78,7 +94,9 @@ function resetGame() {
             playerX.value = "";
             playerO.disabled = false;
             playerO.value = "";
-            scores = { X: 0, O: 0 }
+            document.getElementById("ai").disabled = false;
+            document.getElementById("human").disabled = false;
+            scores = { X: 0, O: 0 };
             document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
             document.getElementById("start").classList.remove("hide");
             document.getElementById("restart").classList.add("hide");
@@ -122,12 +140,14 @@ function checkCells() {
 
 
 function gameInput(object) {
-    if (object.value == "" && document.getElementById("start").classList.contains("hide") == true){
-        object.value = actualPlayer;    // Add X or O to the board
-        checkCells();                   // Check if there is a winner
+    if (object.value == "" && document.getElementById("start").classList.contains("hide") == true && !cellMatches()){
+        object.value = actualPlayer;                // Add X or O to the board
+        board.splice(board.indexOf(object.id), 1);  // remove actual cell with input X or O
+        checkCells();                               // Check if there is a winner
         // Identify next player
         if (actualPlayer == "X") {
             actualPlayer = "O";
+            if (document.getElementById("ai").checked && board.length > 0) {aiGame();}
         } else {
             actualPlayer = "X";
         } 
@@ -135,8 +155,8 @@ function gameInput(object) {
 }
 
 // create random number to play with computer
-function randomR() {
-    var randomNumber = Math.floor(Math.random("R") * 8);
-    alert(board[randomNumber]);
-    document.getElementById(board[randomNumber]).value = "R";
+function aiGame() {
+    let randomNumber = Math.floor(Math.random() * (board.length -1));
+    gameInput(document.getElementById(board[randomNumber]));
 }
+
