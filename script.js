@@ -17,8 +17,8 @@ var scores = {
 };
 
 
-let boardOriginal = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
-var board = boardOriginal;
+var puppy = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
+var board = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
 
 
 // Change welcome screen to game screen
@@ -57,7 +57,8 @@ function resetCells() {
     c1.value = "";
     c2.value = "";
     c3.value = "";
-    board = boardOriginal;
+    board = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
+    actualPlayer = "X";    
 }
 
 function startGame() {
@@ -101,6 +102,8 @@ function resetGame() {
             document.getElementById("start").classList.remove("hide");
             document.getElementById("restart").classList.add("hide");
             document.getElementById("reset").classList.add("hide");
+            document.getElementById("human").checked=false;
+            document.getElementById("ai").checked=false;
         }
       })
 }
@@ -118,7 +121,7 @@ function cellMatches() {
         (a1.value==b1.value && b1.value==c1.value && a1.value != "") ||
         (a2.value==b2.value && b2.value==c2.value && a2.value != "") ||
         (a3.value==b3.value && b3.value==c3.value && a3.value != "")
-    ) {result = true;} else {result = false;}
+    ) {return true;} else {return false;}
 } 
 
 function checkCells() {
