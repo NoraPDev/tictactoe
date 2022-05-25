@@ -23,6 +23,7 @@ var board = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
 const change = document.getElementById("change")
 const gameArea = document.getElementById("game-area")
 const welcomeArea = document.getElementById("welcome-area")
+const endGameArea = document.getElementById("end-game-area")
 
 change.addEventListener('click', () => {
     gameArea.classList.remove("hide");
@@ -138,6 +139,7 @@ function checkCells() {
     // rows, diagonals, cols
     if(cellMatches()) {
                 popUp(`${actualPlayer} won!`);
+
                 scores[actualPlayer] ++;
                 document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
     } else {
@@ -167,4 +169,3 @@ function aiGame() {
     let randomNumber = Math.floor(Math.random() * (board.length -1));
     gameInput(document.getElementById(board[randomNumber]));
 }
-
