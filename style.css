@@ -29,7 +29,7 @@ body {
 .text-center {
     font-family: 'VT323', monospace;
     color: #FF9933;
-    font-size: 4vw;
+    font-size: 6vw;
     position: absolute;
     top: 0vw;
     left: 50%;
@@ -43,8 +43,8 @@ body {
 
 #start-button {
     position: absolute;
-    right: 4vw;
-    top: 3vw;
+    right: 10vw;
+    top: 6vw;
 }
 
 #playerNames {
@@ -56,17 +56,35 @@ body {
 
 }
 
+#score-box {
+    position: absolute;
+    right: 10vw;
+    top: 6vw;
+}
+
+#text-content {
+    font-size: 3vw;
+}
+
+.radio-opponent-text {
+    font-size: 3vw;
+}
+
+.opponent-label {
+    font-size: 2vw;
+}
+
 #player-x, #player-o {
-    width: 5vw;
+    width: 8vw;
     height: 1vw;
     font-size: vw;
 }
 
 
 #board-area {
-	background-color:#16dfee;
-	width:35vw;
-	height:35vw;
+	background-color:#6ccbf6;
+	width:47vw;
+	height:47vw;
 	position:relative;
     margin: auto;
     top: 15vw;
@@ -145,7 +163,7 @@ body {
 
 @keyframes blink {
     from { border-color: transparent }
-    to { border-color: orange; }
+    to { border-color: #FF9933; }
 }
 
 .neon-button {
@@ -156,7 +174,7 @@ body {
 }
 
 .neon-game-button {
-    font-size: 3vw;
+    font-size: 5vw;
     color: #FF9933;
     display: inline-block;
     cursor: pointer;
@@ -169,3 +187,7 @@ body {
     display: none;
 }
 
+#wargames {
+    max-height: 70vh;
+    max-width: 100%;
+}

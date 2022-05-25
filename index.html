@@ -25,14 +25,14 @@
     <div class="container hide" id="game-area">
                 <h1 class="text-center">TIC-TAC-TOE</h1>
                 <div id="playerNames">
-                    <label for="name">Player X</label>
+                    <label for="name" class="opponent-label">Player X</label>
                     <input type="text" id="player-x" placeholder="Name">
                     <br>
                     Player O <br>
                     <input type="radio" id="human" name="opponent" value="human" onclick="chooseOpponent()">
-                    <label for="html">Human</label>
+                    <label for="html" class="radio-opponent-text">Human</label>
                     <input type="radio" id="ai" name="opponent" value="ai" onclick="chooseOpponent()" checked>
-                    <label for="css">Computer</label>
+                    <label for="css" class="radio-opponent-text">Computer</label>
                     
                     
                     <input type="text" id="player-o" placeholder="Name" value="Computer" disabled>
@@ -61,6 +61,12 @@
                     <a href="#" class="neon-game-button hide" id="reset" onclick="resetGame()">RESET</a>
                     </div>
     </div>    
+    <div id="end-game-area" hidden>
+        <div id="end-game-text">
+            Congratulations! YOU WON THIS ROUND!
+        </div>
+        <img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gifv" alt="#wargames from Faster, Pussycat! Gif! Gif!">
+    </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
 </body>
