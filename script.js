@@ -139,7 +139,8 @@ function checkCells() {
     // rows, diagonals, cols
     if(cellMatches()) {
                 popUp(`${actualPlayer} won!`);
-
+                gameArea.classList.add("hide");
+                endGameArea.classList.remove("hide");
                 scores[actualPlayer] ++;
                 document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
     } else {
