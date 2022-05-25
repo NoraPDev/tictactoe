@@ -152,7 +152,6 @@ body {
 	outline: none;
 	text-align: center;
     padding: 0;
-    
 }
 
 @keyframes typing {
@@ -180,8 +179,6 @@ body {
     cursor: pointer;
  
 }
-
-
 
 .hide {
     display: none;
