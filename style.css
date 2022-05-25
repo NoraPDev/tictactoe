@@ -26,103 +26,115 @@ body {
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
 }
 
-.nd{
+.text-center {
+    font-family: 'VT323', monospace;
+    color: #FF9933;
+    font-size: 4vw;
+    position: absolute;
+    top: 0vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0;
+}
+
+#game-area {
+    position: relative;
+}
+
+#start-button {
+    position: absolute;
+    right: 4vw;
+    top: 3vw;
+}
+
+#playerNames {
+    position: absolute;
+    left: 4vw;
+    top: 3vw;
+    font-size: 4vw;
+    text-align: left;
+
+}
+
+#player-x, #player-o {
+    width: 5vw;
+    height: 1vw;
+    font-size: vw;
+}
+
+
+#board-area {
 	background-color:#16dfee;
-	width:47vw;
-	height:47vw;
+	width:35vw;
+	height:35vw;
 	position:relative;
+    margin: auto;
+    top: 15vw;
+}
+
+.cells {
+    position:absolute;
+	background-color:black;
+    width:15vw;
+	height:15vw;
 }
 
 .a1{
-	position:absolute;
-	background-color:black;
 	left: 0vw;
 	top: 0vw;
-	width:15vw;
-	height:15vw;
 }
 
 .a2{
-	position:absolute;
-	background-color:black;
 	left: 16vw;
 	top: 0vw;
-	width:15vw;
-	height:15vw;
 }
 
 .a3{
-	position:absolute;
-	background-color:black;
 	right: 0vw;
 	top: 0vw;
-	width:15vw;
-	height:15vw;
 }
 
 .b1{
-	position:absolute;
-	background-color:black;
 	left: 0vw;
 	top: 16vw;
-	width:15vw;
-	height:15vw;
 }
 
 .b2{
-	position:absolute;
-	background-color:black;
 	left: 16vw;
 	top: 16vw;
-	width:15vw;
-	height:15vw;
 }
 
 .b3{
-	position:absolute;
-	background-color:black;
 	right: 0vw;
 	top: 16vw;
-	width:15vw;
-	height:15vw;
 }
 
 .c1{
-	position:absolute;
-	background-color:black;
 	left: 0vw;
 	bottom: 0vw;
-	width:15vw;
-	height:15vw;
 }
 
 .c2{
-	position:absolute;
-	background-color:black;
 	left: 16vw;
 	bottom: 0vw;
-	width:15vw;
-	height:15vw;
 }
 
 .c3{
-	position:absolute;
-	background-color:black;
 	right: 0vw;
 	bottom: 0vw;
-	width:15vw;
-	height:15vw;
 }
 
 .inp{
-	width: 14.1vw;
-	height: 14.1vw;
+	width: 100%;
+	height: 100%;
 	color: orange;
 	font-size: 15vw;
 	background-color: black;
 	border: none;
 	outline: none;
 	text-align: center;
+    padding: 0;
+    
 }
 
 @keyframes typing {
@@ -144,18 +156,14 @@ body {
 }
 
 .neon-game-button {
-    font-size: 3em;
+    font-size: 3vw;
     color: #FF9933;
     display: inline-block;
     cursor: pointer;
  
 }
 
-h1 {
-    font-family: 'VT323', monospace;
-    color: #FF9933;
-    font-size: 3.5em;
-}
+
 
 .hide {
     display: none;
