@@ -8,8 +8,8 @@ let b3 = document.getElementById("b3");
 let c1 = document.getElementById("c1");
 let c2 = document.getElementById("c2");
 let c3 = document.getElementById("c3");
-let playerX = document.getElementById("player-x");
-let playerO = document.getElementById("player-o");
+let playerX = document.getElementById("player-X");
+let playerO = document.getElementById("player-O");
 var actualPlayer = "X";
 var scores = {
     X: 0,
@@ -18,6 +18,18 @@ var scores = {
 
 var board = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
 
+let matches=[
+    [ 'a1', 'a2', 'a3'],
+    [ 'b1', 'b2', 'b3'],
+    [ 'c1', 'c2', 'c3'],
+
+    [ 'a1', 'b1', 'c1'],
+    [ 'a2', 'b2', 'c2'],
+    [ 'a3', 'b3', 'c3'],
+
+    [ 'a1', 'b2', 'c3'],
+    [ 'a3', 'b2', 'c1']
+];
 
 // Change welcome screen to game screen
 const change = document.getElementById("change")
@@ -41,7 +53,7 @@ function chooseOpponent() {
 }
 
 function inputPlayerNames() {
-    document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + "<br>" + playerO.value + "=" + scores.O;
+    document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + "<br>" + playerO.value + ": " + scores.O;
 }
 
 function resetCells() {
@@ -62,15 +74,10 @@ function startGame() {
     if (playerX.value == "" || playerO.value == "") {
         popUp(`Type in players' names, please!`)
     } else {
-    playerX.disabled = true;
-    playerO.disabled = true;
-    document.getElementById("ai").disabled = true;
-    document.getElementById("human").disabled = true;
     resetCells();
-    document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
-    document.getElementById("restart").classList.remove("hide");
-    document.getElementById("reset").classList.remove("hide");
-    document.getElementById("start").classList.add("hide");
+    document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + " <br>" + playerO.value + ": " + scores.O;
+    document.getElementById("buttons-box").classList.remove("hide");
+    document.getElementById("playerNames").classList.add("hide");
     document.getElementById("board-area").classList.remove("hide");
     }
 }
@@ -91,19 +98,16 @@ function resetGame() {
       }).then((result) => {
         if (result.isConfirmed) {
             resetCells();
-            playerX.disabled = false; 
             playerX.value = "";
-            playerO.disabled = false;
-            playerO.value = "";
-            document.getElementById("ai").disabled = false;
-            document.getElementById("human").disabled = false;
+            playerO.value = "Computer";
+            playerO.disabled = true;
             scores = { X: 0, O: 0 };
             document.getElementById("text-content").innerHTML = "";
-            document.getElementById("start").classList.remove("hide");
-            document.getElementById("restart").classList.add("hide");
-            document.getElementById("reset").classList.add("hide");
+            document.getElementById("buttons-box").classList.add("hide");
+            document.getElementById("playerNames").classList.remove("hide");
+            document.getElementById("board-area").classList.add("hide");
             document.getElementById("human").checked=false;
-            document.getElementById("ai").checked=false;
+            document.getElementById("ai").checked=true;
         }
       })
 }
@@ -139,11 +143,9 @@ function popUp(message) {
 function checkCells() {
     // rows, diagonals, cols
     if(cellMatches()) {
-                popUp(`${actualPlayer} won!`);
-                gameArea.classList.add("hide");
-                endGameArea.classList.remove("hide");
+                popUp(`Congratulations! `+document.getElementById("player-"+actualPlayer).value+` (${actualPlayer}) won this round!<br><img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif" alt="Congratulations">`);
                 scores[actualPlayer] ++;
-                document.getElementById("text-content").innerHTML = playerX.value + "=" + scores.X + " <br>" + playerO.value + "=" + scores.O;
+                document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + " <br>" + playerO.value + ": " + scores.O;
     } else {
         if(board.length == 0) {popUp(`It's a draw!`);}
         
@@ -152,7 +154,7 @@ function checkCells() {
 
 
 function gameInput(object) {
-    if (object.value == "" && document.getElementById("start").classList.contains("hide") == true && !cellMatches()){
+    if (object.value == "" && document.getElementById("playerNames").classList.contains("hide") == true && !cellMatches()){
         object.value = actualPlayer;                // Add X or O to the board
         board.splice(board.indexOf(object.id), 1);  // remove actual cell with input X or O
         checkCells();                               // Check if there is a winner
@@ -168,6 +170,15 @@ function gameInput(object) {
 
 // create random number to play with computer
 function aiGame() {
-    let randomNumber = Math.floor(Math.random() * (board.length -1));
-    gameInput(document.getElementById(board[randomNumber]));
+    var result = false;
+    // OO_
+    for (i=0; i<matches.length; i++){
+        if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
+        if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='O' && document.getElementById(matches[i][1]).value=='') { result=matches[i][1]; }
+        if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='O' && document.getElementById(matches[i][0]).value=='') { result=matches[i][0]; }
+    }
+    if (!result){
+        result = board[Math.floor(Math.random() * (board.length -1))];
+    }
+    gameInput(document.getElementById(result));
 }
