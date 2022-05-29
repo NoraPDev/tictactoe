@@ -63,12 +63,13 @@ body {
 
 #score-box {
     position: absolute;
-    right: 10vw;
-    top: 6vw;
+    left: 4vmin;
+    top: 10vmin;
+	text-align: left;
 }
 
 #text-content {
-    font-size: 3vw;
+    font-size: 6vmin;
 }
 
 .radio-opponent-text {
@@ -237,8 +238,7 @@ body {
     color: #FF9933;
     display: inline-block;
     cursor: pointer;
- 
-}
+ }
 
 .hide {
     display: none;
@@ -247,4 +247,11 @@ body {
 #wargames {
     max-height: 70vh;
     max-width: 100%;
+}
+
+#buttons-box{
+	position: absolute;
+	top: 10vmin;
+	right: 4vmin;
+	text-align: right;
 }
