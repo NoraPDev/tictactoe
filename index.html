@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
 </head>
 <body>
+
     <div class="container" id="welcome-area">
         <div>
             <span id="welcome-text">GREETINGS! <br><br>
@@ -20,54 +21,71 @@
             <a href="#" class="neon-button" id="change">Click Me</a>
         </div>
     </div>
-    
 
-    <div class="container hide" id="game-area">
+   <div class="container hide" id="game-area">
+
+    <div id='board-area' class="hide">
+        <div class='cells a1' onClick="gameInput(a1)"><input type='text' id='a1' class='inp' disabled></div>
+        <div class='separator sepvertical sa1'></div>
+        <div class='cells a2' onClick="gameInput(a2)"><input type='text' id='a2' class='inp' disabled></div>
+        <div class='separator sepvertical  sa2'></div>
+        <div class='cells a3' onClick="gameInput(a3)"><input type='text' id='a3' class='inp' disabled></div>
+        <div class='separator sephorizontal sa3'></div>
+        <div class='cells b1' onClick="gameInput(b1)"><input type='text' id='b1' class='inp' disabled></div>
+        <div class='separator sepvertical sb1'></div>
+        <div class='cells b2' onClick="gameInput(b2)"><input type='text' id='b2' class='inp' disabled></div>
+        <div class='separator sepvertical sb2'></div>
+        <div class='cells b3' onClick="gameInput(b3)"><input type='text' id='b3' class='inp' disabled></div>
+        <div class='separator sephorizontal sb3'></div>
+        <div class='cells c1' onClick="gameInput(c1)"><input type='text' id='c1' class='inp' disabled></div>
+        <div class='separator sepvertical sc1'></div>
+        <div class='cells c2' onClick="gameInput(c2)"><input type='text' id='c2' class='inp' disabled></div>
+        <div class='separator sepvertical sc2'></div>
+        <div class='cells c3' onClick="gameInput(c3)"><input type='text' id='c3' class='inp' disabled></div>
+    </div>
+    
                 <h1 class="text-center">TIC-TAC-TOE</h1>
                 <div id="playerNames">
                     <label for="name" class="opponent-label">Player X</label>
-                    <input type="text" id="player-x" placeholder="Name">
                     <br>
-                    Player O <br>
-                    <input type="radio" id="human" name="opponent" value="human" onclick="chooseOpponent()">
-                    <label for="html" class="radio-opponent-text">Human</label>
-                    <input type="radio" id="ai" name="opponent" value="ai" onclick="chooseOpponent()" checked>
-                    <label for="css" class="radio-opponent-text">Computer</label>
-                    
-                    
-                    <input type="text" id="player-o" placeholder="Name" value="Computer" disabled>
-                </div>
-                <div id="start-button">
-                    <a href="#" class="neon-game-button" id="start" onclick="startGame()" style="padding-right: 5%">START</a>
+                    Name: <input type="text" id="player-x" placeholder="Name">
+                    <br>
+                    <br>
+                    <label for="name" class="opponent-label">Player O</label>
+                    <br>
+                    <div id="radio-container">
+                        <input type="radio" id="human" name="opponent" value="human" onclick="chooseOpponent()">
+                        <label for="html" class="radio-opponent-text">Human</label>
+                        <br>
+                        <input type="radio" id="ai" name="opponent" value="ai" onclick="chooseOpponent()" checked>
+                        <label for="css" class="radio-opponent-text">Computer</label>
+                    </div>
+                    Name: <input type="text" id="player-o" placeholder="Name" value="Computer" disabled>
+                    <br>
+                    <br>
+                    <a href="#" class="neon-game-button" id="start" onclick="startGame()">START</a>
                 </div>
                 <div id="score-box">
                     <span id="text-content"></span>
                 </div>
-                    <div id='board-area'>
-                        <div class='cells a1' onClick="gameInput(a1)"><input type='text' id='a1' class='inp' disabled></div>
-                        <div class='cells a2' onClick="gameInput(a2)"><input type='text' id='a2' class='inp' disabled></div>
-                        <div class='cells a3' onClick="gameInput(a3)"><input type='text' id='a3' class='inp' disabled></div>
-                        <div class='cells b1' onClick="gameInput(b1)"><input type='text' id='b1' class='inp' disabled></div>
-                        <div class='cells b2' onClick="gameInput(b2)"><input type='text' id='b2' class='inp' disabled></div>
-                        <div class='cells b3' onClick="gameInput(b3)"><input type='text' id='b3' class='inp' disabled></div>
-                        <div class='cells c1' onClick="gameInput(c1)"><input type='text' id='c1' class='inp' disabled></div>
-                        <div class='cells c2' onClick="gameInput(c2)"><input type='text' id='c2' class='inp' disabled></div>
-                        <div class='cells c3' onClick="gameInput(c3)"><input type='text' id='c3' class='inp' disabled></div>
-                    </div>
                                     
                     
                     <div id="buttons-box">
-                    <a href="#" class="neon-game-button hide" id="restart" onclick="restartGame()" style="padding-right: 5%">RESTART</a>
+                    <a href="#" class="neon-game-button hide" id="restart" onclick="restartGame()">RESTART</a>
                     <a href="#" class="neon-game-button hide" id="reset" onclick="resetGame()">RESET</a>
                     </div>
     </div>    
+
+
     <div id="end-game-area" hidden>
         <div id="end-game-text">
             Congratulations! YOU WON THIS ROUND!
         </div>
         <img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gifv" alt="#wargames from Faster, Pussycat! Gif! Gif!">
     </div>
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
