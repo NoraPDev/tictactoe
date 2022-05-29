@@ -71,6 +71,7 @@ function startGame() {
     document.getElementById("restart").classList.remove("hide");
     document.getElementById("reset").classList.remove("hide");
     document.getElementById("start").classList.add("hide");
+    document.getElementById("board-area").classList.remove("hide");
     }
 }
 
