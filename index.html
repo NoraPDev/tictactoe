@@ -48,7 +48,7 @@
                 <div id="playerNames">
                     <label for="name" class="opponent-label">Player X</label>
                     <br>
-                    Name: <input type="text" id="player-x" placeholder="Name">
+                    Name: <input type="text" id="player-X" placeholder="Name">
                     <br>
                     <br>
                     <label for="name" class="opponent-label">Player O</label>
@@ -60,7 +60,7 @@
                         <input type="radio" id="ai" name="opponent" value="ai" onclick="chooseOpponent()" checked>
                         <label for="css" class="radio-opponent-text">Computer</label>
                     </div>
-                    Name: <input type="text" id="player-o" placeholder="Name" value="Computer" disabled>
+                    Name: <input type="text" id="player-O" placeholder="Name" value="Computer" disabled>
                     <br>
                     <br>
                     <a href="#" class="neon-game-button" id="start" onclick="startGame()">START</a>
@@ -70,19 +70,12 @@
                 </div>
                                     
                     
-                    <div id="buttons-box">
-                    <a href="#" class="neon-game-button hide" id="restart" onclick="restartGame()">RESTART</a>
-                    <a href="#" class="neon-game-button hide" id="reset" onclick="resetGame()">RESET</a>
+                    <div id="buttons-box" class="hide">
+                    <a href="#" class="neon-game-button" id="restart" onclick="restartGame()">RESTART</a>
+                    <br>
+                    <a href="#" class="neon-game-button" id="reset" onclick="resetGame()">RESET</a>
                     </div>
     </div>    
-
-
-    <div id="end-game-area" hidden>
-        <div id="end-game-text">
-            Congratulations! YOU WON THIS ROUND!
-        </div>
-        <img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gifv" alt="#wargames from Faster, Pussycat! Gif! Gif!">
-    </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
