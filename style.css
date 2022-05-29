@@ -1,10 +1,16 @@
+:root{
+	height:100%;
+}
+
 body {
     font-family: 'VT323', monospace;
     color: rgb(58, 116, 183);
     background-color: black;
-    margin: 0;
+    margin: 0 0 0 0;
     position: relative;
     width:100%;
+	height: 100%;
+	overflow: hidden;
     text-align: center;
 }
 
@@ -20,16 +26,18 @@ body {
 
 }
 
+#radio-container{
+	text-align: left;
+}
+
 #welcome-text {
     color: #6ccbf6; 
-    filter: drop-shadow(2px 2px 8px #6ccbf6); 
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
 }
 
 .text-center {
     font-family: 'VT323', monospace;
     color: #FF9933;
-    font-size: 6vw;
+    font-size: 10vmin;
     position: absolute;
     top: 0vw;
     left: 50%;
@@ -39,21 +47,18 @@ body {
 
 #game-area {
     position: relative;
-}
-
-#start-button {
-    position: absolute;
-    right: 10vw;
-    top: 6vw;
+	width:100%;
+	height: 100%;
 }
 
 #playerNames {
-    position: absolute;
-    left: 4vw;
-    top: 3vw;
-    font-size: 4vw;
-    text-align: left;
-
+	background-color: black;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+    font-size: 6vmin;
+    text-align: center;
 }
 
 #score-box {
@@ -67,103 +72,158 @@ body {
 }
 
 .radio-opponent-text {
-    font-size: 3vw;
+    font-size: 6vmin;
 }
 
 .opponent-label {
-    font-size: 2vw;
+    font-size: 7vmin;
+	color: #FF9933;
 }
 
 #player-x, #player-o {
-    width: 8vw;
-    height: 1vw;
-    font-size: vw;
+    width: 15vmin;
+    height: 3vmin;
+    font-size: 3vmin;
 }
 
 
 #board-area {
-	background-color:#6ccbf6;
-	width:47vw;
-	height:47vw;
-	position:relative;
-    margin: auto;
-    top: 15vw;
+	background-color: black;
+	width:72vmin;
+	height:72vmin;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
 }
 
 .cells {
-    position:absolute;
+	position: absolute;
+	width:31%;
+	height:31%;
+	color: orange;
+	text-align: center;
+	vertical-align: middle;
 	background-color:black;
-    width:15vw;
-	height:15vw;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 .a1{
-	left: 0vw;
-	top: 0vw;
+	left: 0;
+	top: 0;
 }
 
 .a2{
-	left: 16vw;
-	top: 0vw;
+	left: 34.5%;
+	top: 0;
 }
 
 .a3{
-	right: 0vw;
-	top: 0vw;
+	right: 0;
+	top: 0;
 }
 
 .b1{
-	left: 0vw;
-	top: 16vw;
+	left: 0;
+	top: 34.5%;
 }
 
 .b2{
-	left: 16vw;
-	top: 16vw;
+	left: 34.5%;
+	top: 34.5%;
 }
 
 .b3{
-	right: 0vw;
-	top: 16vw;
+	right: 0;
+	top: 34.5%;
 }
 
 .c1{
-	left: 0vw;
-	bottom: 0vw;
+	left: 0;
+	bottom: 0;
 }
 
 .c2{
-	left: 16vw;
-	bottom: 0vw;
+	left: 34.5%;
+	bottom: 0;
 }
 
 .c3{
-	right: 0vw;
-	bottom: 0vw;
+	right: 0;
+	bottom: 0;
 }
 
 .inp{
 	width: 100%;
 	height: 100%;
 	color: orange;
-	font-size: 15vw;
-	background-color: black;
+	font-size: 26vmin;
 	border: none;
 	outline: none;
 	text-align: center;
-    padding: 0;
+	padding:0;
+	background-color: black;
 }
 
-@keyframes typing {
-  from {
-    width: 3em
-  }
+.separator{
+	background-color: #16dfee;
+	position: absolute;
 }
 
-@keyframes blink {
-    from { border-color: transparent }
-    to { border-color: #FF9933; }
+.sepvertical{
+	width: 3.5%;
+	min-width: 3.5%;
+	height: 26vmin;
 }
+
+.sephorizontal{
+	width: 100%;
+	min-width: 100%;
+	height: 3.5%;
+}
+
+.sa1{
+	left: 31%;
+	top: 0;
+}
+
+.sa2{
+	left: 65.5%;
+	top: 0;
+}
+
+.sa3{
+	left: 0;
+	top: 31%;
+}
+
+.sb1{
+	left: 31%;
+	top: 34.5%;
+}
+
+.sb2{
+	left: 65.5%;
+	top: 34.5%;
+}
+
+.sb3{
+	left: 0;
+	top: 65.5%;
+}
+
+.sc1{
+	left: 31%;
+	bottom: 0;
+}
+
+.sc2{
+	left: 65.5%;
+	bottom: 0;
+}
+
 
 .neon-button {
     font-size: 1em;
@@ -173,7 +233,7 @@ body {
 }
 
 .neon-game-button {
-    font-size: 5vw;
+    font-size: 7vmin;
     color: #FF9933;
     display: inline-block;
     cursor: pointer;
