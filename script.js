@@ -31,6 +31,9 @@ let matches=[
     [ 'a3', 'b2', 'c1']
 ];
 
+var matchlist=[];
+var counter=[];
+
 // Change welcome screen to game screen
 const change = document.getElementById("change")
 const gameArea = document.getElementById("game-area")
@@ -171,14 +174,46 @@ function gameInput(object) {
 // create random number to play with computer
 function aiGame() {
     var result = false;
-    // OO_
+    // O O _
     for (i=0; i<matches.length; i++){
         if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
         if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='O' && document.getElementById(matches[i][1]).value=='') { result=matches[i][1]; }
         if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='O' && document.getElementById(matches[i][0]).value=='') { result=matches[i][0]; }
+    }
+    // X X _
+    if (!result){
+        for (i=0; i<matches.length; i++){
+            if (document.getElementById(matches[i][0]).value=='X' && document.getElementById(matches[i][1]).value=='X' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
+            if (document.getElementById(matches[i][0]).value=='X' && document.getElementById(matches[i][2]).value=='X' && document.getElementById(matches[i][1]).value=='') { result=matches[i][1]; }
+            if (document.getElementById(matches[i][1]).value=='X' && document.getElementById(matches[i][2]).value=='X' && document.getElementById(matches[i][0]).value=='') { result=matches[i][0]; }
+        }
+    }
+    // O _ _
+    if (!result){
+        for (i=0; i<matches.length; i++){
+            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='' && document.getElementById(matches[i][2]).value=='') { pushElement(result=matches[i][2]); }
+            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][1]).value=='') { pushElement(result=matches[i][1]); }
+            if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][0]).value=='') { pushElement(result=matches[i][0]); }
+        }
+        if (counter.length>0){
+            result=matchlist[counter.indexOf(Math.max(...counter))];
+        }
     }
     if (!result){
         result = board[Math.floor(Math.random() * (board.length -1))];
     }
     gameInput(document.getElementById(result));
 }
+
+// pushing elements into array to find the most frequent occurance of the possible O matches
+function pushElement(element){
+    if (matchlist.indexOf(element)==-1){
+        matchlist.push(element);
+        counter.push(1);
+    } else {
+        counter[matchlist.indexOf(element)]++;
+    }
+}
+
+matchlist a2 c3 b2 c1  
+counter   2  1   2  1
