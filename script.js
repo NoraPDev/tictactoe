@@ -1,4 +1,7 @@
 // 
+let text='GREETINGS! \n\n SHALL WE PLAY A GAME? \n A STRANGE GAME. \n\n THE ONLY WINNING MOVE IS NOT TO PLAY.';
+var twcounter=0;
+
 let a1 = document.getElementById("a1");
 let a2 = document.getElementById("a2");
 let a3 = document.getElementById("a3");
@@ -16,6 +19,7 @@ var scores = {
     O: 0
 };
 
+// empty cells
 var board = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
 
 let matches=[
@@ -44,6 +48,13 @@ change.addEventListener('click', () => {
     gameArea.classList.remove("hide");
     welcomeArea.classList.add("hide");
 })
+
+function tw(){
+	document.getElementById('welcome-text').innerHTML+=text.charAt(twcounter);
+	twcounter++;
+	setTimeout(tw, 50);
+};
+
 
 function chooseOpponent() {
     if (document.getElementById("ai").checked) {
@@ -146,12 +157,21 @@ function popUp(message) {
 function checkCells() {
     // rows, diagonals, cols
     if(cellMatches()) {
-                popUp(`Congratulations! `+document.getElementById("player-"+actualPlayer).value+` (${actualPlayer}) won this round!<br><img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif" alt="Congratulations">`);
+        var popupText="";
+        if(actualPlayer == "X" || (document.getElementById("human").checked && actualPlayer == "O")) {
+                popupText="Congratulations! "+ document.getElementById("player-"+actualPlayer).value + "("+ actualPlayer + ")" +  "won this round!";
+                popUp(popupText + `<br><img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif" alt="Congratulations">`);
                 scores[actualPlayer] ++;
                 document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + " <br>" + playerO.value + ": " + scores.O;
+            } else {
+                popupText="You lose! " + document.getElementById("player-"+actualPlayer).value+ "("+ actualPlayer + ")" +  "won this round!";
+                popUp(popupText + `<br><img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif" alt="Congratulations">`);
+                scores[actualPlayer] ++;
+                document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + " <br>" + playerO.value + ": " + scores.O;
+            }
+        
     } else {
         if(board.length == 0) {popUp(`It's a draw!`);}
-        
     }
 }
 
@@ -191,14 +211,22 @@ function aiGame() {
     // O _ _
     if (!result){
         for (i=0; i<matches.length; i++){
-            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='' && document.getElementById(matches[i][2]).value=='') { pushElement(result=matches[i][2]); }
-            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][1]).value=='') { pushElement(result=matches[i][1]); }
-            if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][0]).value=='') { pushElement(result=matches[i][0]); }
+            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='' && document.getElementById(matches[i][2]).value=='') { pushElement(matches[i][2]); }
+            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][1]).value=='') { pushElement(matches[i][1]); }
+            if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][0]).value=='') { pushElement(matches[i][0]); }
         }
         if (counter.length>0){
             result=matchlist[counter.indexOf(Math.max(...counter))];
         }
     }
+
+    // if cell in the middle is empty, put O there
+    if (!result) {
+        if (board.indexOf("b2") != -1) {
+            result = "b2";
+        }
+    }
+    
     if (!result){
         result = board[Math.floor(Math.random() * (board.length -1))];
     }
@@ -215,5 +243,5 @@ function pushElement(element){
     }
 }
 
-matchlist a2 c3 b2 c1  
-counter   2  1   2  1
+//matchlist a2 c3 b2 c1  
+//counter   2  1   2  1
