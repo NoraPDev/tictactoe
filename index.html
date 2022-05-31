@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
@@ -12,14 +12,14 @@
 </head>
 <body onLoad = "tw()">
 
-    <div class="container" id="welcome-area">
-        <div>
-            <span id="welcome-text"></span><br><br>
-            <a href="#" class="neon-button" id="change">Click Me</a>
-        </div>
+    <div id="welcome-area">
+        <img id="welcome-img" src="assets/images/wargames2.jpg" alt="wargames welcome screen">
+        <br>
+        <span id="welcome-text"></span><br><br>
+        <a href="#" class="neon-button" id="change">Click Me</a>
     </div>
 
-    <div class="container hide" id="game-area">
+    <div class="hide" id="game-area">
         <div id='board-area' class="hide">
             <div class='cells a1' onClick="gameInput(a1)"><input type='text' id='a1' class='inp' disabled></div>
             <div class='separator sepvertical sa1'></div>
@@ -73,7 +73,7 @@
     </div>    
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 </html>
