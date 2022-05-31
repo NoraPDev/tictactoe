@@ -1,5 +1,5 @@
 // typewriter text
-let text='GREETINGS! \n\n SHALL WE PLAY A GAME? \n A STRANGE GAME. \n\n THE ONLY WINNING MOVE IS NOT TO PLAY.';
+let text="GREETINGS! \n\n SHALL WE PLAY A GAME? \n A STRANGE GAME. \n\n THE ONLY WINNING MOVE IS NOT TO PLAY.";
 var twcounter=0;
 
 let a1 = document.getElementById("a1");
@@ -224,13 +224,22 @@ function aiGame() {
 
     // if cell in the middle is empty, put O there
     if (!result) {
-        if (board.indexOf("b2") != -1) {
-            result = "b2";
-        }
+        if (board.indexOf("b2") != -1) {result = "b2";}
     }
-    
+
+    // if cell in one of the corners is empty, put O there
+    if (!result) {
+        var corners=[];
+        if (board.indexOf("a1") != -1) {corners.push("a1");}
+        if (board.indexOf("a3") != -1) {corners.push("a3");}
+        if (board.indexOf("c1") != -1) {corners.push("c1");}
+        if (board.indexOf("c3") != -1) {corners.push("c3");}
+        result = corners[Math.floor(Math.random() * corners.length)];
+    }
+
+    // random step
     if (!result){
-        result = board[Math.floor(Math.random() * (board.length -1))];
+        result = board[Math.floor(Math.random() * board.length)];
     }
     gameInput(document.getElementById(result));
 }
