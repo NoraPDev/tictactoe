@@ -1,4 +1,4 @@
-// 
+// typewriter text
 let text='GREETINGS! \n\n SHALL WE PLAY A GAME? \n A STRANGE GAME. \n\n THE ONLY WINNING MOVE IS NOT TO PLAY.';
 var twcounter=0;
 
@@ -38,7 +38,7 @@ let matches=[
 var matchlist=[];
 var counter=[];
 
-// Change welcome screen to game screen
+// Change welcome screen to game screen with constants
 const change = document.getElementById("change")
 const gameArea = document.getElementById("game-area")
 const welcomeArea = document.getElementById("welcome-area")
@@ -49,6 +49,7 @@ change.addEventListener('click', () => {
     welcomeArea.classList.add("hide");
 })
 
+//typewriter function
 function tw(){
 	document.getElementById('welcome-text').innerHTML+=text.charAt(twcounter);
 	twcounter++;
@@ -158,18 +159,17 @@ function checkCells() {
     // rows, diagonals, cols
     if(cellMatches()) {
         var popupText="";
+        var popupImage = "";
         if(actualPlayer == "X" || (document.getElementById("human").checked && actualPlayer == "O")) {
-                popupText="Congratulations! "+ document.getElementById("player-"+actualPlayer).value + "("+ actualPlayer + ")" +  "won this round!";
-                popUp(popupText + `<br><img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif" alt="Congratulations">`);
-                scores[actualPlayer] ++;
-                document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + " <br>" + playerO.value + ": " + scores.O;
-            } else {
-                popupText="You lose! " + document.getElementById("player-"+actualPlayer).value+ "("+ actualPlayer + ")" +  "won this round!";
-                popUp(popupText + `<br><img id="wargames" src="https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif" alt="Congratulations">`);
-                scores[actualPlayer] ++;
-                document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + " <br>" + playerO.value + ": " + scores.O;
-            }
-        
+            popupText="Congratulations! <br>" + document.getElementById("player-"+actualPlayer).value + "("+ actualPlayer + ") won this round!";
+            popupImage = "https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif";
+        } else {
+            popupText="You lose! <br>" + document.getElementById("player-"+actualPlayer).value+ "("+ actualPlayer + ") won this round!";
+            popupImage = "https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif";
+        }
+        popUp(popupText + `<br><img id="wargames" src="`+ popupImage + `" alt="Congratulations">`);
+        scores[actualPlayer] ++;
+        document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + " <br>" + playerO.value + ": " + scores.O;
     } else {
         if(board.length == 0) {popUp(`It's a draw!`);}
     }
