@@ -5,7 +5,7 @@
 WarGames Tic-Tac-Toe is a tic-tac-toe game inspired by the '80s film, WarGames, so I have used design elements that are similar to the film's design elements, such as font colour, font type, pictures, gifs. I have taken the main quote out of the film for the welcome screen, to make it more theatrical for the players. 
 The goal is to have three X's or O's horizontally, vertically or diagonally, so we can have a winner.
 
-Most of the games I have seen online require two players. So there is a Player X and a Player O field, where the players have to input their names before they can start playing. For this, I have disabled the board, so the players MUST input their names and press START GAME to begin. When the game begins, the scores field will change the names to the players' names. First player is always X. When the board has three X's or O's horizontally, vertically or diagonally, an alert pops up advising that there is a winner and which player the winner is.
+
 
 I wanted to try creating a game where one player can play against the computer, as in play against an AI. 
 
@@ -23,3 +23,13 @@ You can view the live site here - <a href="https://norapdev.github.io/tictactoe/
 1. [**Bugs**](#bugs)
 1. [**Technology Used**](#technology-used)
 1. [**Credits**](#credits)
+
+## **Planning Stage**
+Most of the Tic-Tac-Toe games I have seen online require two players, where players can be either human or computer. The game board normally is a board with 3 x 3 squares. As I mentioned above, the main goal is to achieve three same symbols in a row - horizontally, vertically or diagonally on a 3 x 3 grid. This player will be the winner. 
+
+In this game, I wanted to make it less boring, more challanging by creating an AI to play against, therefore we have two options, either play against a human or play against the computer. 
+
+## **Features**
+
+
+So there is a Player X and a Player O field, where the players have to input their names before they can start playing. For this, I have disabled the board, so the players MUST input their names and press START GAME to begin. When the game begins, the scores field will change the names to the players' names. First player is always X. When the board has three X's or O's horizontally, vertically or diagonally, an alert pops up advising that there is a winner and which player the winner is.
