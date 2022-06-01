@@ -1,26 +1,26 @@
 // typewriter text
-let text="GREETINGS! \n\n SHALL WE PLAY A GAME? \n A STRANGE GAME. \n\n THE ONLY WINNING MOVE IS NOT TO PLAY.";
-var twcounter=0;
+const text="GREETINGS! \n\n SHALL WE PLAY A GAME? \n A STRANGE GAME. \n\n THE ONLY WINNING MOVE IS NOT TO PLAY.";
+const playerX = document.getElementById("player-X");
+const playerO = document.getElementById("player-O");
+const a1 = document.getElementById("a1");
+const a2 = document.getElementById("a2");
+const a3 = document.getElementById("a3");
+const b1 = document.getElementById("b1");
+const b2 = document.getElementById("b2");
+const b3 = document.getElementById("b3");
+const c1 = document.getElementById("c1");
+const c2 = document.getElementById("c2");
+const c3 = document.getElementById("c3");
 
-let a1 = document.getElementById("a1");
-let a2 = document.getElementById("a2");
-let a3 = document.getElementById("a3");
-let b1 = document.getElementById("b1");
-let b2 = document.getElementById("b2");
-let b3 = document.getElementById("b3");
-let c1 = document.getElementById("c1");
-let c2 = document.getElementById("c2");
-let c3 = document.getElementById("c3");
-let playerX = document.getElementById("player-X");
-let playerO = document.getElementById("player-O");
-var actualPlayer = "X";
-var scores = {
+let actualPlayer = "X";
+let twcounter=0;
+let scores = {
     X: 0,
     O: 0
 };
 
 // empty cells
-var board = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
+let board = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
 
 let matches=[
     [ 'a1', 'a2', 'a3'],
@@ -35,8 +35,8 @@ let matches=[
     [ 'a3', 'b2', 'c1']
 ];
 
-var matchlist=[];
-var counter=[];
+let matchlist=[];
+let counter=[];
 
 // Change welcome screen to game screen with constants
 const change = document.getElementById("change")
@@ -49,14 +49,18 @@ change.addEventListener('click', () => {
     welcomeArea.classList.add("hide");
 })
 
-//typewriter function
+/**
+ * Typewriter Effect
+ */
 function tw(){
 	document.getElementById('welcome-text').innerHTML+=text.charAt(twcounter);
 	twcounter++;
 	setTimeout(tw, 50);
 };
 
-
+/**
+ * Select the opponent
+ */
 function chooseOpponent() {
     if (document.getElementById("ai").checked) {
         playerO.disabled = true;
@@ -148,6 +152,8 @@ function cellMatches() {
 function popUp(message) {
     Swal.fire({
         title: (message),
+        confirmButtonColor: '#FF9933',
+        heightAuto: false,
         showClass: {
             popup: 'animate_animated animate_fadeInDown'
         },
@@ -160,8 +166,8 @@ function popUp(message) {
 function checkCells() {
     // rows, diagonals, cols
     if(cellMatches()) {
-        var popupText="";
-        var popupImage = "";
+        let popupText="";
+        let popupImage = "";
         if(actualPlayer == "X" || (document.getElementById("human").checked && actualPlayer == "O")) {
             popupText="Congratulations! <br>" + document.getElementById("player-"+actualPlayer).value + "("+ actualPlayer + ") won this round!";
             popupImage = "https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif";
@@ -195,7 +201,7 @@ function gameInput(object) {
 
 // create random number to play with computer
 function aiGame() {
-    var result = false;
+    let result = false;
     // O O _
     for (i=0; i<matches.length; i++){
         if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
@@ -229,7 +235,7 @@ function aiGame() {
 
     // if cell in one of the corners is empty, put O there
     if (!result) {
-        var corners=[];
+        let corners=[];
         if (board.indexOf("a1") != -1) {corners.push("a1");}
         if (board.indexOf("a3") != -1) {corners.push("a3");}
         if (board.indexOf("c1") != -1) {corners.push("c1");}
