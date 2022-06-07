@@ -84,6 +84,14 @@ The game and site still needs some improvements and additional features:
 
 ## **Testing**
 
+I have tested the game from the very beginning. Typewriter effect works well, **Click me** button takes us into the player input area. Here the standard players are a human and the Computer, so initially Player O's name input is disabled and already been filled out with the Computer's name. If we press **Start** here, it will not allow us to the game until we put a name for Player X. If we chose Player O to be a human, the input field becomes active. 
+
+* Testing the game with two human players : 
+Everything works, popup comes out at the right place with the right player winning text (win or draw popups), scores are increasing where they should. **Play again** button restart the actual game, **Reset game** has a popup function again at the right place, and well functioning buttons, it resets the game to the very beginning and resets the players and scores as well.
+
+* Testing the game with a human and an AI opponent :
+ Everything works, right popup comes out at the right place (win, lose or draw popups), scores are increasing where they should. **Play again** button restart the actual game, **Reset game** has a popup function again at the right place, and well functioning buttons, it resets the game to the very beginning and resets the players and scores as well.
+
 ### **Code Validation**
 
 * I have tested the website on a number of browsers and devices both manually and using the tools below.
