@@ -79,7 +79,6 @@ First player is always X. When the board has three X's or O's horizontally, vert
 The game and site still needs some improvements and additional features:
 * A login page, with an additional database to store the previously achieved scores, so players can keep a record
 * Video chat function
-* Currently the AI has all the logics that won't allow a human player to win, so it is too smart at the moment. I would like to add a feature when this will be randomised and it gives the human player a chance to actually win.
 
 ## **Testing**
 
