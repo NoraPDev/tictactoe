@@ -117,7 +117,8 @@ function resetGame() {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, reset the whole game!'
+        confirmButtonText: 'Yes, reset the whole game!',
+        heightAuto: false
       }).then((result) => {
         if (result.isConfirmed) {
             resetCells();
