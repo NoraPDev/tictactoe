@@ -84,9 +84,19 @@ The game and site still needs some improvements and additional features:
 The codes are all validated by [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). A minor warning and errors were found on the index.html when tested, but I have managed to fix them immeditately.<br /><br />
 [![Valid CSS!](https://jigsaw.w3.org/css-validator/images/vcss)](https://jigsaw.w3.org/css-validator/check/referer)
 
+I have also tested it on [JSHint](https://https://jshint.com/) and got below results. Please see explanation below as well.
+
+<img src="assets/images/jshint.jpg"  width="300" height="400">
+
+* The 2 undefined variable has been copied from [Sweetalert](https://sweetalert2.github.io/#download) therefore it is not my code, so I have not declared the variable, just copy-pasted.
+
+* The 7 unused variables are actually all used in index.html as an onclick event. 
+
+So apart from these comments the website has passed this test as well.
+
 ### **Lighthouse Testing**
 
-![Lighthouse Report](assets/photos/lighthouse.png)
+![Lighthouse Report](assets/images/lighthouse.jpg)
 
 ### **Site Contrast Testing**
 
@@ -101,3 +111,4 @@ http://dugandzic.us/images/easyblog_images/64/b2ap3_thumbnail_wargames.jpg
 https://makeagif.com/gif/wargames-1011-movie-clip-tic-tac-toe-with-joshua-1983-hd-N2q-9R
 https://creative-analytics.corsairs.network/wargames-80s-style-deep-learning-3bf406f61582
 https://www.imdb.com/title/tt0086567/plotsummary
+https://sweetalert2.github.io/#download
