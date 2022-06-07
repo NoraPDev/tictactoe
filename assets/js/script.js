@@ -203,47 +203,51 @@ function gameInput(object) {
 function aiGame() {
     let result = false;
     let i = 0;
-    // O O _
-    for (i=0; i<matches.length; i++){
-        if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
-        if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='O' && document.getElementById(matches[i][1]).value=='') { result=matches[i][1]; }
-        if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='O' && document.getElementById(matches[i][0]).value=='') { result=matches[i][0]; }
-    }
-    // X X _
-    if (!result){
+    let smartPlayer = Math.floor(Math.random() * 1);    // 0 OR 1 (0=NO, 1=YES)
+
+    if (smartPlayer == 1){
+       
+        // O O _
         for (i=0; i<matches.length; i++){
-            if (document.getElementById(matches[i][0]).value=='X' && document.getElementById(matches[i][1]).value=='X' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
-            if (document.getElementById(matches[i][0]).value=='X' && document.getElementById(matches[i][2]).value=='X' && document.getElementById(matches[i][1]).value=='') { result=matches[i][1]; }
-            if (document.getElementById(matches[i][1]).value=='X' && document.getElementById(matches[i][2]).value=='X' && document.getElementById(matches[i][0]).value=='') { result=matches[i][0]; }
+            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
+            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='O' && document.getElementById(matches[i][1]).value=='') { result=matches[i][1]; }
+            if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='O' && document.getElementById(matches[i][0]).value=='') { result=matches[i][0]; }
+        }
+        // X X _
+        if (!result){
+            for (i=0; i<matches.length; i++){
+                if (document.getElementById(matches[i][0]).value=='X' && document.getElementById(matches[i][1]).value=='X' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
+                if (document.getElementById(matches[i][0]).value=='X' && document.getElementById(matches[i][2]).value=='X' && document.getElementById(matches[i][1]).value=='') { result=matches[i][1]; }
+                if (document.getElementById(matches[i][1]).value=='X' && document.getElementById(matches[i][2]).value=='X' && document.getElementById(matches[i][0]).value=='') { result=matches[i][0]; }
+            }
+        }
+        // O _ _
+        if (!result){
+            for (i=0; i<matches.length; i++){
+                if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='' && document.getElementById(matches[i][2]).value=='') { pushElement(matches[i][2]); }
+                if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][1]).value=='') { pushElement(matches[i][1]); }
+                if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][0]).value=='') { pushElement(matches[i][0]); }
+            }
+            if (counter.length>0){
+                result=matchlist[counter.indexOf(Math.max(...counter))];
+            }
+        }
+
+        // if cell in the middle is empty, put O there
+        if (!result) {
+            if (board.indexOf("b2") != -1) {result = "b2";}
+        }
+
+        // if cell in one of the corners is empty, put O there
+        if (!result) {
+            let corners=[];
+            if (board.indexOf("a1") != -1) {corners.push("a1");}
+            if (board.indexOf("a3") != -1) {corners.push("a3");}
+            if (board.indexOf("c1") != -1) {corners.push("c1");}
+            if (board.indexOf("c3") != -1) {corners.push("c3");}
+            result = corners[Math.floor(Math.random() * corners.length)];
         }
     }
-    // O _ _
-    if (!result){
-        for (i=0; i<matches.length; i++){
-            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='' && document.getElementById(matches[i][2]).value=='') { pushElement(matches[i][2]); }
-            if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][1]).value=='') { pushElement(matches[i][1]); }
-            if (document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='' && document.getElementById(matches[i][0]).value=='') { pushElement(matches[i][0]); }
-        }
-        if (counter.length>0){
-            result=matchlist[counter.indexOf(Math.max(...counter))];
-        }
-    }
-
-    // if cell in the middle is empty, put O there
-    if (!result) {
-        if (board.indexOf("b2") != -1) {result = "b2";}
-    }
-
-    // if cell in one of the corners is empty, put O there
-    if (!result) {
-        let corners=[];
-        if (board.indexOf("a1") != -1) {corners.push("a1");}
-        if (board.indexOf("a3") != -1) {corners.push("a3");}
-        if (board.indexOf("c1") != -1) {corners.push("c1");}
-        if (board.indexOf("c3") != -1) {corners.push("c3");}
-        result = corners[Math.floor(Math.random() * corners.length)];
-    }
-
     // random step
     if (!result){
         result = board[Math.floor(Math.random() * board.length)];
