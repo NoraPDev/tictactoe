@@ -173,7 +173,7 @@ function checkCells() {
             popupImage = "https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif";
         } else {
             popupText="You lose! <br>" + document.getElementById("player-"+actualPlayer).value+ "("+ actualPlayer + ") won this round!";
-            popupImage = "https://64.media.tumblr.com/a1cf0a4ac8088bb7712e43155e88d3e7/tumblr_mv15b8E0Fz1r4zr8xo3_500.gif";
+            popupImage = "https://i.gifer.com/KnOU.gif";
         }
         popUp(popupText + `<br><img id="wargames" src="`+ popupImage + `" alt="Congratulations">`);
         scores[actualPlayer] ++;
