@@ -9,8 +9,8 @@ You can view the live site here - <a href="https://norapdev.github.io/tictactoe/
 
 ## Table of contents
 1. [**Planning Stage**](#planning-stage)
-1. [**Features**](#features-on-the-welcome-screen)
-1. [**Features on the Game Page**](#features-on-the-board-page)
+1. [**Features**](#features)
+1. [**Features on the Game Page**](#features-on-the-game-page)
 1. [**Future Features to be Added**](#future-features-to-be-added)
 1. [**Testing**](#testing)
 1. [**Deployment**](#deployment)
