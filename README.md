@@ -74,11 +74,13 @@ First player is always X. When the board has three X's or O's horizontally, vert
 * [You won!](assets/images/won.jpg)
 * [You lose!](assets/images/comp-won.jpg)
 
+I have created an AI for the better player experience. I have used all logics for the computer to be able to respond to every movement the best way in order to defeat the human player. However, when these AI functions have been done, I realised, I have to add a random function to the AI logics, so it gives a chance to the human to win, as it was obvious that the computer got too smart.
+
 ## **Future Features to be Added**
 
 The game and site still needs some improvements and additional features:
 * A login page, with an additional database to store the previously achieved scores, so players can keep a record
-* Video chat function
+* Online gaming function
 
 ## **Testing**
 
