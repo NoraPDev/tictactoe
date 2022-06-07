@@ -76,6 +76,23 @@ The game and site still needs some improvements and additional features:
 * Video chat function
 * Currently the AI has all the logics that won't allow a human player to win, so it is too smart at the moment. I would like to add a feature when this will be randomised and it gives the human player a chance to actually win.
 
+## **Testing**
+
+### **Code Validation**
+
+* I have tested the website on a number of browsers and devices both manually and using the tools below.
+The codes are all validated by [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). A minor warning and errors were found on the index.html when tested, but I have managed to fix them immeditately.<br /><br />
+[![Valid CSS!](https://jigsaw.w3.org/css-validator/images/vcss)](https://jigsaw.w3.org/css-validator/check/referer)
+
+### **Lighthouse Testing**
+
+![Lighthouse Report](assets/photos/lighthouse.png)
+
+### **Site Contrast Testing**
+
+#### **WCAG Report**
+
+* I have tested the site with [WCAG](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en) for any color blindness issues or contrast issues. The test is showing one contrast issue with the contact buttons on the cardboxes.
 
 
 ## **Credits**
