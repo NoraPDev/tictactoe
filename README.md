@@ -1,6 +1,6 @@
 # **WarGames Tic-Tac-Toe**
 
-![Responsive Design](assets/images/responsive.JPG)
+![Responsive Design](assets/images/responsive.png)
 
 WarGames Tic-Tac-Toe is a tic-tac-toe game inspired by the '80s film, WarGames (1983), so I have used design elements that are similar to the film's design elements, such as font colour, font type, pictures, gifs. I have taken the main quote out of the film for the welcome screen, to make it more theatrical for the players. 
 The goal is to have three X's or O's horizontally, vertically or diagonally, so we can have a winner.
