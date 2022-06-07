@@ -134,6 +134,10 @@ I have found a couple of errors during developing the site, for example:
 * Problem :lady_beetle: : Welcome screen typewriter effect text pushed the **Click Me** button down, while doing the effect.
 * Resolution :white_check_mark: : I had to put the button in a separate div.
 
+4.
+* Problem :lady_beetle: : When played against the Computer and human lost, still got the same **Congratulations!** popup
+* Resolution :white_check_mark: : I had to change the popup to be different when the player loses against the Computer or a human being.
+
 
 ## **Technology Used**
 
