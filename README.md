@@ -50,13 +50,14 @@ I wanted the website to be easily readable and color blind friendly as well.
 When you open the site, the main picture and the main quote comes up initially, to create the '80s vibe and the theme for the film. There is a nice typewriter effect created in JS to enhance the retro style.
 To learn more about the film, visit here -> <a href="https://www.imdb.com/title/tt0086567/plotsummary" target="_blank" rel="noopener">IMDB WarGames Plot Summary</a>
 
-![Welcome Image](assets/images/wargames2.jpg)
+<img src="assets/images/wargames2.jpg" alt="welcome screen" width="600" height="500">
+
 ![Welcome Quote](assets/images/quote-wargames.jpg)
 
 ## **Features on the Game Page**
 From the welcome screen you can click to enter the player field, which is where you can add your names and decide if you would like to play against a human being or the computer. The standard opponent is the computer, so I have disabled and prefilled the name of the Computer. If the player wants to change to Human, the input field would be activated and a name can be typed in. I have made adding a name and chosing an opponent mandatory (JS function), you can only play if you are serious about playing! :sunglasses: :computer: 
 
-![Player Field Image](assets/images/player-field.jpg)
+<img src="assets/images/player-field.jpg" alt="player field screen" width="400" height="300">
 
 When the player press START the game begins and the game area will appear along with the scores field. The scores table will have the typed in names in there with the relevant most recent scores.
 
@@ -86,7 +87,7 @@ The codes are all validated by [W3C HTML Validator](https://validator.w3.org/) a
 
 I have also tested it on [JSHint](https://https://jshint.com/) and got below results. Please see explanation below as well.
 
-<img src="assets/images/jshint.jpg"  width="300" height="400">
+<img src="assets/images/jshint.jpg" alt="jshint results" width="300" height="400">
 
 * The 2 undefined variable has been copied from [Sweetalert](https://sweetalert2.github.io/#download) therefore it is not my code, so I have not declared the variable, just copy-pasted.
 
