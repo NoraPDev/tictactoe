@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // typewriter text
 const text="GREETINGS! \n\n SHALL WE PLAY A GAME? \n A STRANGE GAME. \n\n THE ONLY WINNING MOVE IS NOT TO PLAY.";
 const playerX = document.getElementById("player-X");
