@@ -39,15 +39,15 @@ let matchlist=[];
 let counter=[];
 
 // Change welcome screen to game screen with constants
-const change = document.getElementById("change")
-const gameArea = document.getElementById("game-area")
-const welcomeArea = document.getElementById("welcome-area")
-const endGameArea = document.getElementById("end-game-area")
+const change = document.getElementById("change");
+const gameArea = document.getElementById("game-area");
+const welcomeArea = document.getElementById("welcome-area");
+const endGameArea = document.getElementById("end-game-area");
 
 change.addEventListener('click', () => {
     gameArea.classList.remove("hide");
     welcomeArea.classList.add("hide");
-})
+});
 
 /**
  * Typewriter Effect
@@ -56,7 +56,7 @@ function tw(){
 	document.getElementById('welcome-text').innerHTML+=text.charAt(twcounter);
 	twcounter++;
 	setTimeout(tw, 50);
-};
+}
 
 /**
  * Select the opponent
@@ -93,7 +93,7 @@ function resetCells() {
 
 function startGame() {
     if (playerX.value == "" || playerO.value == "") {
-        popUp(`Type in players' names, please!`)
+        popUp(`Type in players' names, please!`);
     } else {
     resetCells();
     document.getElementById("text-content").innerHTML = playerX.value + ": " + scores.X + " <br>" + playerO.value + ": " + scores.O;
@@ -130,7 +130,7 @@ function resetGame() {
             document.getElementById("human").checked=false;
             document.getElementById("ai").checked=true;
         }
-      })
+      });
 }
 
 // check if there are three X's or O's horizontally, vertically or diagonally
@@ -160,7 +160,7 @@ function popUp(message) {
         hideClass: {
             popup: 'animate_animated animate_fadeOutUp'
         }
-    })
+    });
 }
 
 function checkCells() {
@@ -202,6 +202,7 @@ function gameInput(object) {
 // create random number to play with computer
 function aiGame() {
     let result = false;
+    let i = 0;
     // O O _
     for (i=0; i<matches.length; i++){
         if (document.getElementById(matches[i][0]).value=='O' && document.getElementById(matches[i][1]).value=='O' && document.getElementById(matches[i][2]).value=='') { result=matches[i][2]; }
