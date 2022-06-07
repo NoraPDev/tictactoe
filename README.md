@@ -32,7 +32,11 @@ As a player, I want to be able to see my scores and wins all the time.
 
 ### **Wireframe**
 The initial idea of the website was created in Balsamiq, to help me guide through the building stage as the different features have been added. 
-As the website became more and more visually attractive, it was clear that some features were missing, therefore I had to make some additional implementations, for it to be user friendly and better from a player's perspective.
+As the website became more and more visually attractive, it was clear that some features need to be hidden or disabled, therefore I had to make some additional implementations, for it to be user friendly and better from a player's perspective. The pictures below show my initial thoughts of the site, but it has been altered since.
+
+Links
+* [Welcome Screen](assets/images/balsamiq-start.png)
+* [Game Area](assets/images/balsamiq1.png)
 
 
 ### **Colour Scheme and Font Choice**
@@ -50,7 +54,7 @@ I wanted the website to be easily readable and color blind friendly as well.
 When you open the site, the main picture and the main quote comes up initially, to create the '80s vibe and the theme for the film. There is a nice typewriter effect created in JS to enhance the retro style.
 To learn more about the film, visit here -> <a href="https://www.imdb.com/title/tt0086567/plotsummary" target="_blank" rel="noopener">IMDB WarGames Plot Summary</a>
 
-<img src="assets/images/wargames2.jpg" alt="welcome screen" width="600" height="500">
+<img src="assets/images/wargames2.jpg" alt="welcome screen" width="800" height="500">
 
 ![Welcome Quote](assets/images/quote-wargames.jpg)
 
@@ -87,9 +91,9 @@ The codes are all validated by [W3C HTML Validator](https://validator.w3.org/) a
 
 I have also tested it on [JSHint](https://https://jshint.com/) and got below results. Please see explanation below as well.
 
-<img src="assets/images/jshint.jpg" alt="jshint results" width="300" height="400">
+<img src="assets/images/jshint.jpg" alt="jshint results" width="400" height="500">
 
-* The 2 undefined variable has been copied from [Sweetalert](https://sweetalert2.github.io/#download) therefore it is not my code, so I have not declared the variable, just copy-pasted.
+* The 2 undefined variables have been copied from [Sweetalert](https://sweetalert2.github.io/#download) therefore this is not my code, so I have not declared the variable.
 
 * The 7 unused variables are actually all used in index.html as an onclick event. 
 
@@ -103,13 +107,72 @@ So apart from these comments the website has passed this test as well.
 
 #### **WCAG Report**
 
-* I have tested the site with [WCAG](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en) for any color blindness issues or contrast issues. The test is showing one contrast issue with the contact buttons on the cardboxes.
+* I have tested the site with [WCAG](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en) for any color blindness issues or contrast issues. The test is showing one contrast issue for deuteranopia for one of the blue shades.
 
+## **Deployment**
+I have followed the steps below for deployment:
+
+1. Find the correct repository on GitHub
+1. On the repository site, click on **Settings**
+1. There is a menu on the left, click on **Pages**
+1. Under the source section, change the **Branch** type to **main** and then click **Save**
+1. The section above will indicate that the site is ready to be published and then it will change to **published**.
+![published](assets/images/deploy.png)
+
+## **Bugs**
+I have found a couple of errors during developing the site, for example:
+
+1.
+* Problem :lady_beetle: : Typewriter effect from an external source didn't want to work in CSS.
+* Resolution :white_check_mark: : I have created a typewriter effect in JavaScript instead.
+
+2.
+* Problem :lady_beetle: : Pop up window pushed everything up on screen, when appeared.
+* Resolution :white_check_mark: : I had to add heightAuto: false into the popup function.
+
+3.
+* Problem :lady_beetle: : Welcome screen typewriter effect text pushed the **Click Me** button down, while doing the effect.
+* Resolution :white_check_mark: : I had to put the button in a separate div.
+
+
+## **Technology Used**
+
+![html-css-js](assets/images/logo.png)
+
+I have used HTML5, CSS3 and JavaScript to build this website. 
+
+**HTML5**
+Used to add content and structure to the website
+
+**CSS3** 
+Used to add style to the content
+
+**JavaScript**
+Used to add functions and player experience to the game
 
 ## **Credits**
 
-http://dugandzic.us/images/easyblog_images/64/b2ap3_thumbnail_wargames.jpg
-https://makeagif.com/gif/wargames-1011-movie-clip-tic-tac-toe-with-joshua-1983-hd-N2q-9R
-https://creative-analytics.corsairs.network/wargames-80s-style-deep-learning-3bf406f61582
-https://www.imdb.com/title/tt0086567/plotsummary
-https://sweetalert2.github.io/#download
+### **Content**
+* The text and style on the welcome screen and the game area have been inspired by the film, WarGames. 
+
+    * [IMDB WarGames Plot Summary](https://www.imdb.com/title/tt0086567/plotsummary)
+    * [Initial quote](http://dugandzic.us/images/easyblog_images/64/b2ap3_thumbnail_wargames.jpg)
+
+* The inspirations behind the Readme template:
+
+    *https://github.com/NoraPDev/ApplePieJoinery/blob/main/README.md
+
+* As this is my first project in JavaScript, it was influenced by the study material as well, namely the Love Math project from Code Institute material.
+* I have also used Google, W3 school, YouTube to get more understanding on specific areas.
+* I have used GooglFonts for the font and SweetAlert for the popup function
+
+### **Media**
+Unfortunately none of the photos or gifs are mine, they have been provided by below sites 
+
+* [WarGames Welcome Screen](https://creative-analytics.corsairs.network/wargames-80s-style-deep-learning-3bf406f61582)
+* [Winner gif](https://makeagif.com/gif/wargames-1011-movie-clip-tic-tac-toe-with-joshua-1983-hd-N2q-9R)
+* [Loser gif](https://gifer.com/en/KnOU)
+
+### **Thanks**
+* I would like to say thank you to my mentor, Richard Wells, who supported me throughout this project in a very helpful manner.
+* I also would like to thank you to my friend, Peter Babucs, for helping and supporting me patiently in my studies, much appreciated.
