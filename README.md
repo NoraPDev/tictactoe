@@ -94,9 +94,8 @@ I have also tested it on [JSHint](https://https://jshint.com/) and got below res
 
 <img src="assets/images/jshint.jpg" alt="jshint results" width="400" height="500">
 
-* The 2 undefined variables have been copied from [Sweetalert](https://sweetalert2.github.io/#download) therefore this is not my code, so I have not declared the variable.
 
-* The 7 unused variables are actually all used in index.html as an onclick event. 
+* The 7 unused variables are actually all functions and are all used in **index.html** as an onclick event. 
 
 So apart from these comments the website has passed this test as well.
 
