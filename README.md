@@ -102,10 +102,10 @@ I have also tested it on [JSHint](https://https://jshint.com/) and got below res
 
 <img src="assets/images/jshint.jpg" alt="jshint results" width="400" height="500">
 
-
+* The 2 unused variables are not my code, hence why they are not declared, they have been copied from an external source for the popup function.
 * The 7 unused variables are actually all functions and are all used in **index.html** as an onclick event. 
 
-So apart from these comments the website has passed this test as well.
+Apart from these comments the website has passed this test as well.
 
 ### **Lighthouse Testing**
 
